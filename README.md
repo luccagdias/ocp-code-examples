@@ -11,3 +11,7 @@ O objetivo das anotações não é ser um tutorial da linguagem (visto que exist
 Muitos dos exemplos de código não seguem (propositalmente) a convenção de escrita de códigos Java definida pela comunidade.
 
 > É importante salientar que os exemplos de código encontrados neste repositório são inteiramente creditados aos autores do livro do qual foram extraídos. A autoria e o crédito por esses exemplos e anotações pertencem exclusivamente aos escritores mencionados na obra referenciada.
+>
+> Os exemplos são mantidos neste repositório apenas para fins educacionais, e não há intenção de comercializar ou expor o conteúdo do livro.
+> Esses exemplos, por si só, não substituem a completude do material original. Para um aprendizado aprofundado e abrangente sobre o assunto, recomenda-se a leitura da obra original.
+
