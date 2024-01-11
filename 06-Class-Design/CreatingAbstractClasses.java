@@ -28,12 +28,12 @@ class Wolf extends Canine {
     }
 }
 
-// class Fox extends Canine {} // error: Fox is not abstract and does not override abstract method
+class Fox extends Canine {} // error: Fox is not abstract and does not override abstract method
                             // getSound() in Canine
 
 abstract class Alligator {
     public static void main(String... food) {
-        // var a = new Alligator(); // error: Alligator is abstract; cannot be instantiated
+        var a = new Alligator(); // error: Alligator is abstract; cannot be instantiated
     }
 }
 
@@ -65,11 +65,11 @@ abstract class Llama {          // not requred to include an abstract method
 }
 
 abstract class Tiger {
-    abstract public int claw(); // "abstract" modifier can be placed before the access modifier
+    abstract public int claw(); // "abstract" modifier CAN be placed before the access modifier
 }
 
-class abstract Bear {           // "abstract" modifier cannot be placed after the "class" keyword
-    public int abstract howl(); // "abstract" modifier cannot be placed after the return type
+class abstract Bear {           // "abstract" modifier CANNOT be placed after the "class" keyword
+    public int abstract howl(); // "abstract" modifier CANNOT be placed after the return type
 }
 
 
@@ -112,4 +112,44 @@ class BlackRhino extends Rhino {
 /*
  * Creating Constructors in Abstract Classes
  *
+ *     Even though abstract classes cannot be instantiated, they are still initialized through by
+ *     their subclasses.
+ *
  */
+abstract class AnotherMammal {
+    abstract CharSequence chew();
+
+    public AnotherMammal() { // only called when being initialized through a subclass
+        System.out.println(chew());
+    }
+}
+
+class Platypus extends AnotherMammal {
+    String chew() { return "yummy!"; }
+
+    public static void main(String[] args) {
+        new Platypus();
+    }
+}
+
+
+
+/*
+ * Spotting Invalid Declarations
+ *
+ *     abstract and final: "abstract" intend for someone else to extend or implement, "final" are
+ *     preventing anyone from extending or implementing it. These concepts are in direct conflict
+ *     with each other.
+ *
+ *     abstract and private: how would you define a subclass that implements a required method if
+ *     the method is not inherited by the subclass?
+ *
+ *     abstract and static: static methods cannot be overridden, so it cannot be marked "abstract"
+ *     since it can never be implemented.
+ *
+ */
+abstract class Animal {
+    abstract final void walk();   // error: illegal combination of modifiers: abstract and final
+    private abstract void sing(); // error: illegal combination of modifiers: abstract and private
+    abstract static void swim();  // error: illegal combination of modifiers: abstract and static
+}
