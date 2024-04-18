@@ -47,3 +47,23 @@ class IncrementAndDecrement {
         System.out.println(parkAttendance);   // 0
     }
 }
+
+
+/* Casting Values
+ * 
+ *      - operation where one ddata type is explicitly interpreted as another ddata type.
+ *      - optional and unncessary when converting toa smaller or narrowing data type.
+ *      - casting primitives is required any time you are going from a larger numerical data type.
+ *        to a smaller numerical data type, or converting from a floating-point number to an
+ *        integral value.
+ *      - overflow is when a number is so large that it will no longer fit within the data type,
+ *        so the system "wraps around" to the lowest negative value and conuts up from there.
+ *
+ */
+class CastingValues {
+    int fur = (int)5;
+    int hair = (short) 2;
+    String type = (String) "Bird";
+    short tail = (short)(4 + 10); // since casting is a unary operation, it would only be applied
+                                  // to the 4 if we didn't enclose 4 + 10 with parentheses
+}

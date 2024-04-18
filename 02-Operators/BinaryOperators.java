@@ -53,3 +53,27 @@ class ArithmeticOperators {
         var m = j * k / l; // m = double
     }
 }
+
+/* Assignment Operator
+ *
+ *      - assigns the variable on the left side of the operator with the result of the value
+ *        on the right side of the equation.
+ *      - is evaluated from right to left.
+ *      - Java supports numerous compound assignemt operators (+=, -=, *=, /=).
+ *      - compound operators can also save you from having to explicitly cast a value.
+ *      - an assignemt is an expression in and of itself equal to the value of the assignment.
+ */
+class AssignmentOperator {
+    public static void main(String[] args) {
+        long goat = 10;
+        int sheep = 5;
+
+        sheep = sheep * goat; // does not compile, trying to assign a long value to an int variable
+        sheep *= goat;        // the compound operator cast the final result to an int
+
+        long wolf = 5;
+        long coyote = (wolf = 3);
+        System.out.println(wolf);   // 3
+        System.out.println(coyote); // 3
+    }
+}
